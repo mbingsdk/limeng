@@ -46,7 +46,7 @@ export default function Home() {
           },
           {
             title: "Tentang",
-            desc: "Kenali visi dan semangat di balik Mimetich.",
+            desc: "Kenali visi dan semangat di balik Halu.",
             link: "/tentang",
             color: "bg-amber-500/10 text-amber-600 dark:text-amber-400"
           },
@@ -60,7 +60,7 @@ export default function Home() {
           <StaggerChild key={idx}>
             <Link to={item.link}>
               <div className={`group rounded-2xl p-6 h-full ${item.color} shadow-lg hover:shadow-xl transition-shadow`}>
-                <h3 className="text-xl text-white group-hover:text-amber-600 font-bold mb-2">{item.title}</h3>
+                <h3 className="text-xl text-neutral-800 dark:text-white group-hover:text-amber-600 font-bold mb-2">{item.title}</h3>
                 <p className="text-sm">{item.desc}</p>
               </div>
             </Link>
