@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { FadeInUp, StaggerContainer, StaggerChild } from "../utils/motionSettings"
-import puisiList from "../data/puisi"
+import { useEffect, useState } from "react"
+import { getPuisi } from "../gsheet/dataFetch"
 
 export default function Puisi() {
+  const [puisiList, setPuisiList] = useState([])
+
+  useEffect(() => {
+    const fetchPuisi = async () => {
+      const data = await getPuisi();
+      setPuisiList(data);
+    }
+
+    fetchPuisi();
+  }, [])
+
+  if (puisiList.length === 0) {
+    return null;
+  }
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <FadeInUp>

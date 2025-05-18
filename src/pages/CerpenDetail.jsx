@@ -1,24 +1,28 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import cerpenList from "../data/cerpen"
+import { getStory } from "../gsheet/dataFetch";
 
 export default function CerpenDetail() {
   const { id } = useParams()
-  const cerpen = cerpenList.find(item => item.id === id)
   const [cerpenSelected, setCerpen] = useState(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const found = cerpenList.find(item => item.id === id)
-    setCerpen(found)
-    setLoading(false)
-  }, [id])
+    const fetchStory = async () => {
+      const data = await getStory();
+      const found = data.find(item => item.id === id);
+      setCerpen(found);
+      setLoading(false);
+    };
+
+    fetchStory();
+  }, [id]);
 
   if (loading) {
     return <div className="text-center py-20">Memuat...</div>
   }
 
-  if (!cerpen) {
+  if (!cerpenSelected) {
     return <div className="text-center py-20">Story not found</div>
   }
 

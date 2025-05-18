@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom"
-import cerpenList from "../data/cerpen"
 import { 
   FadeInUp,
   StaggerContainer,
   StaggerChild
 } from "../utils/motionSettings"
+import { useEffect, useState } from "react"
+import { getStory } from "../gsheet/dataFetch";
 
 export default function Cerpen() {
+  const [cerpenList, setCerpenList] = useState([])
+
+  useEffect(() => {
+    const fetchStory = async () => {
+      const data = await getStory();
+      setCerpenList(data);
+    };
+
+    fetchStory();
+  }, []);
+
+  if (cerpenList.length === 0) {
+    return null;
+  }
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <FadeInUp>

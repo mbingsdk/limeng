@@ -1,10 +1,24 @@
-import { useState } from "react"
-import galeriData from "../data/galeri"
+import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { FadeInUp, StaggerContainer, StaggerChild } from "../utils/motionSettings"
+import { getGallery } from "../gsheet/dataFetch"
 
 export default function Gambar() {
   const [selectedImage, setSelectedImage] = useState(null)
+  const [galeriData, setGaleriData] = useState([])
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      const data = await getGallery()
+      setGaleriData(data);
+    }
+
+    fetchGallery()
+  }, [])
+
+  if (galeriData.length === 0) {
+    return null;
+  }
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
