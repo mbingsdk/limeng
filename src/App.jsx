@@ -11,6 +11,11 @@ import Kontak from "./pages/Kontak"
 import CerpenDetail from "./pages/CerpenDetail"
 import PuisiDetail from "./pages/PuisiDetail"
 
+import AdminDashboard from "./pages/admin/admin"
+import AdminPuisi from "./pages/admin/puisi/PuisiManager"
+import AdminCerita from "./pages/admin/puisi/CeritaManager"
+import AdminGaleri from "./pages/admin/puisi/GaleriManager"
+
 function App() {
   return (
     <div className="flex min-h-screen bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
@@ -27,6 +32,12 @@ function App() {
             <Route path="/gambar" element={<Gambar />} />
             <Route path="/tentang" element={<About />} />
             <Route path="/kontak" element={<Kontak />} />
+
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/puisi" element={<AdminPuisi />} />
+            <Route path="/admin/cerita" element={<AdminCerita />} />
+            <Route path="/admin/galeri" element={<AdminGaleri />} />
+
             <Route path="/cerpen/:id" element={<CerpenDetail />} />
             <Route path="/puisi/:id" element={<PuisiDetail />} />
           </Routes>

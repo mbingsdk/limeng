@@ -73,7 +73,7 @@ export default function Kontak() {
         </StaggerChild>
 
         {/* Jejak Literasi */}
-        {/* <StaggerChild>
+        <StaggerChild>
           <motion.div
             whileHover={{ y: -5 }}
             className="relative rounded-2xl p-8 bg-amber-50/80 dark:bg-neutral-900/80 backdrop-blur-lg border border-amber-300/50 dark:border-neutral-700/30 shadow-lg h-full"
@@ -106,7 +106,7 @@ export default function Kontak() {
               </div>
             </div>
           </motion.div>
-        </StaggerChild> */}
+        </StaggerChild>
       </StaggerContainer>
 
       {/* Media Sosial */}

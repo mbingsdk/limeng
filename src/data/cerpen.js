@@ -46,7 +46,7 @@ selalu terselip hal-hal tentang anak muda itu.
 Dan saat itu akhirnya aku tahu bahwa setiap karya yang ia buat,
 adalah bisikan rindu yang tak pernah berani ia ucapkan secara langsung.
     `,
-    image: "/limeng/images/pelukis.jpg",
+    image: "/images/pelukis.jpg",
   },
   {
     id: "orbit",
@@ -56,7 +56,7 @@ adalah bisikan rindu yang tak pernah berani ia ucapkan secara langsung.
       Mereka berdua mengitari satu sama lain, seperti planet dan bintang.
       Tapi jarak dan waktu jadi penghalang dalam orbit yang tak pasti.
     `,
-    image: "/limeng/images/orbit-pikiran.jpg",
+    image: "/images/orbit-pikiran.jpg",
   },
 ]
 
